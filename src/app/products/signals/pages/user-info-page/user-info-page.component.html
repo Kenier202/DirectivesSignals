@@ -12,15 +12,15 @@
     </button>
   </div>
 
-  <div class="col-8">
-    <h3>usuario: {{ currentUser()?.last_name }}</h3>
+  <div class="col-8" *ngIf="userWasFound()">
+    <h3>usuario</h3>
     <p>correo: {{ currentUser()?.email }}</p>
-    <p>nombre: {{ currentUser()?.first_name }}</p>
+    <p>nombre: {{ fullName() }}</p>
 
     <img [src]="currentUser()?.avatar" alt="avatar" class="rounded-3" />
   </div>
 
-  <div class="col-8 text-danger">
+  <div class="col-8 text-danger" *ngIf="!userWasFound()">
     <h3>usuario no encontrado</h3>
   </div>
 </div>
