@@ -1,1 +1,9 @@
-<p>counter-page works!</p>
+<h1>counter: {{ counter() }}</h1>
+<hr />
+<h2>square counter {{ squaredCounter() }}</h2>
+<hr />
+<button (click)="increseBy(+1)" class="btn btn-primary">+1</button>
+&nbsp;
+<button (click)="increseBy(-1)" class="btn btn-primary">-1</button>
+&nbsp;
+<button (click)="counter.set(0)" class="btn btn-primary">Reset</button>
